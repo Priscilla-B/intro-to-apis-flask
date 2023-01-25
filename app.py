@@ -21,7 +21,7 @@ client = Client()
 # will authenticate by default by looking into .env for auth keys
 
 def get_sent_messages():
-    messages = []
+    messages = client.messages.list(from_=TWILIO_PHONE_NUMBER)
     return messages
 
 def send_message(to, body):
